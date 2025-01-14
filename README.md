@@ -15,7 +15,4 @@ Getting Started
 
 To run this project locally, follow these steps:
 1. Clone the repository
-You can clone the repository using the following command:
 
-
-git clone https://github.com/your-username/repository-name.git
