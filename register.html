@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Fincorp Financial Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <!-- Signup Section -->
+    <div class="signup-container">
+        <div class="signup-card">
+            <div class="signup-header">
+                <img src="Fincorp Logo.jpg" alt="Fincorp Logo">
+                <h2>Create Your Account</h2>
+                <p>Join Fincorp to access premium financial services</p>
+            </div>
+            
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create a password" required>
+                    <div class="password-strength">
+                        <div class="password-strength-bar" id="password-strength-bar"></div>
+                    </div>
+                    <div class="password-requirements">
+                        <span>Password must contain:</span>
+                        <ul>
+                            <li id="req-length"><i class="fas fa-circle"></i> At least 8 characters</li>
+                            <li id="req-uppercase"><i class="fas fa-circle"></i> At least 1 uppercase letter</li>
+                            <li id="req-number"><i class="fas fa-circle"></i> At least 1 number</li>
+                            <li id="req-special"><i class="fas fa-circle"></i> At least 1 special character</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                
+                <button type="submit" class="signup-btn">Create Account</button>
+                
+                <div class="social-login">
+                    <span>Or sign up with</span>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Fincorp Financial Solutions. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthBar = document.getElementById('password-strength-bar');
+            const requirements = {
+                length: password.length >= 8,
+                uppercase: /[A-Z]/.test(password),
+                number: /\d/.test(password),
+                special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+            };
+
+            // Update requirement indicators
+            document.getElementById('req-length').querySelector('i').className = 
+                requirements.length ? 'fas fa-check-circle text-green-500' : 'fas fa-circle';
+            document.getElementById('req-uppercase').querySelector('i').className = 
+                requirements.uppercase ? 'fas fa-check-circle text-green-500' : 'fas fa-circle';
+            document.getElementById('req-number').querySelector('i').className = 
+                requirements.number ? 'fas fa-check-circle text-green-500' : 'fas fa-circle';
+            document.getElementById('req-special').querySelector('i').className = 
+                requirements.special ? 'fas fa-check-circle text-green-500' : 'fas fa-circle';
+
+            // Calculate strength score (0-100)
+            let score = 0;
+            if (password.length > 0) score += 20;
+            if (password.length >= 8) score += 20;
+            if (requirements.uppercase) score += 20;
+            if (requirements.number) score += 20;
+            if (requirements.special) score += 20;
+
+            // Update strength bar
+            strengthBar.style.width = score + '%';
+            if (score < 40) {
+                strengthBar.style.backgroundColor = '#dc3545'; // Red
+            } else if (score < 80) {
+                strengthBar.style.backgroundColor = '#ffc107'; // Yellow
+            } else {
+                strengthBar.style.backgroundColor = '#28a745'; // Green
+            }
+        });
+
+        // Form submission handling
+        document.querySelector('.signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Here you would typically send this data to your server
+            console.log('Signup attempt with:', { fullname, email, password });
+            
+            // For demo purposes, we'll just show an alert
+            alert('Account created successfully! (This is just a demo)');
+            
+            // In a real implementation, you would:
+            // 1. Validate all inputs
+            // 2. Send to registration endpoint
+            // 3. Handle success/error responses
+            // 4. Redirect on success
+        });
+
+        // Simple animation for the signup card
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupCard = document.querySelector('.signup-card');
+            signupCard.style.opacity = '0';
+            signupCard.style.transform = 'translateY(20px)';
+            signupCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            setTimeout(() => {
+                signupCard.style.opacity = '1';
+                signupCard.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
