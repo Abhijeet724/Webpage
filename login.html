@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fincorp Financial Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="Fincorp Logo.jpg" alt="Fincorp Logo">
+                <h2>Welcome Back</h2>
+                <p>Sign in to access your Fincorp account</p>
+            </div>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="forgot-password.html">Forgot password?</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="login-btn">Sign In</button>
+                
+                <div class="social-login">
+                    <span>Or sign in with</span>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                
+                <div class="register-link">
+                    Don't have an account? <a href="register.html">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Fincorp Financial Solutions. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.querySelector('.login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
+            
+            // Here you would typically send this data to your server
+            console.log('Login attempt with:', { email, password, rememberMe });
+            
+            // For demo purposes, we'll just show an alert
+            alert('Login functionality would connect to your authentication system. For now, this is just a UI demo.');
+            
+            // In a real implementation, you would:
+            // 1. Validate inputs
+            // 2. Send to authentication endpoint
+            // 3. Handle success/error responses
+            // 4. Redirect on success
+        });
+
+        // Simple animation for the login card
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginCard = document.querySelector('.login-card');
+            loginCard.style.opacity = '0';
+            loginCard.style.transform = 'translateY(20px)';
+            loginCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            setTimeout(() => {
+                loginCard.style.opacity = '1';
+                loginCard.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

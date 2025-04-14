@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fincorp – Financial Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="logo" />
+      <span class="company-name">Fincorp Software Solutions</span>
+    </div>
+    <div class="nav-center">
+      <a id="home" href="#">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About us</a>
+      <a href="contact.css">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="login.html" class="signin">Sign In</a>
+      <a href="register.html" class="signup">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Transforming Financial Operations</h1>
+    <p>Fincorp delivers robust, scalable financial products tailored for institutions and fintech companies.</p>
+    <div class="hero-buttons">
+      <a href="services.html" class="btn primary">Get Started</a>
+      <a href="about.html" class="btn secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Product Info -->
+  <section class="product-info">
+    <div class="container">
+      <h2>Our Financial Solutions</h2>
+      <p>We provide end-to-end financial systems that optimize transaction processing, compliance, and analytics for banks, NBFCs, and financial service providers.</p>
+      <div class="square-grid">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Data Engineer</div>
+            <div class="flip-card-back">Design and maintain data pipelines for financial systems</div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Data Analytics</div>
+            <div class="flip-card-back">Generate insights from financial data for smart decisions</div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Enterprise Solutions</div>
+            <div class="flip-card-back">Scalable software for banks and NBFCs</div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Financial Product</div>
+            <div class="flip-card-back">Custom financial apps to manage credit, lending, and risk</div>
+          </div>
+        </div>
+      </div>
+      
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col footer-logo">
+        <img src="Fincorp Logo.jpg" alt="Fincorp Logo" class="footer-img" />
+        <h2>Fincorp</h2>
+        <p>Empowering financial innovation with reliable, scalable solutions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:contact@fincorp.com">contact@fincorp.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fincorp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const flipCards = document.querySelectorAll('.flip-card');
+      flipCards.forEach(card => {
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            this.classList.toggle('flipped');
+          }
+        });
+        card.setAttribute('tabindex', '0');
+      });
+    });
+  </script>
+</body>
+</html>
