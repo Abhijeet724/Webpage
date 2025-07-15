@@ -8,41 +8,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+    
     body {
       font-family: 'Inter', sans-serif;
       opacity: 0;
       animation: fadeIn 0.5s ease-in forwards;
     }
-
+    
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
+    
     .sidebar {
       transition: all 0.3s ease;
     }
-
+    
     .sidebar.collapsed {
       width: 80px;
     }
-
+    
     .sidebar.collapsed .nav-text,
     .sidebar.collapsed .company-name,
     .sidebar.collapsed .section {
       display: none;
     }
-
+    
     .sidebar.collapsed .navlink,
     .sidebar.collapsed .submenu {
       justify-content: center;
     }
-
+    
     .chart-container {
       height: 200px;
     }
-
+    
     @media (max-width: 768px) {
       html {
         font-size: 80%;
@@ -53,51 +53,51 @@
       .company-name {
         font-size: 0.9rem;
       }
-      
+            
       .sidebar {
         position: fixed;
         z-index: 100;
         left: -100%;
       }
-
+      
       .sidebar.active {
         left: 0;
       }
-
+      
       .content {
         margin-left: 0 !important;
       }
-      
+            
       .text-xl {
         font-size: 1.125rem;
       }
-      
+            
       .text-sm {
         font-size: 0.7875rem;
       }
-      
+            
       .text-xs {
         font-size: 0.675rem;
       }
-      
+            
       .p-6 {
         padding: 1.35rem;
       }
-      
+            
       .px-4 {
         padding-left: 0.9rem;
         padding-right: 0.9rem;
       }
-      
+            
       .py-3 {
         padding-top: 0.675rem;
         padding-bottom: 0.675rem;
       }
-      
+            
       .gap-2 {
         gap: 0.45rem;
       }
-      
+            
       .space-x-2 {
         margin-left: 0.45rem;
       }
@@ -113,13 +113,13 @@
     <header class="bg-blue-100 text-gray-800 shadow-md">
       <div class="flex items-center justify-between px-4 py-3">
         <div class="flex items-center gap-2">
-          <button id="sidebarToggle" class="md:hidden text-black focus:outline-none mr-2 transition-transform duration-200 hover:scale-110 active:scale-95">
-            <i class="fas fa-bars text-xl"></i>
+          <button id="sidebarToggle" class="md:hidden text-black focus:outline-none mr-2 transition-transform duration-200 hover:scale-110 active:scale-95" data-open="false">
+            <i class="fas fa-bars text-xl" id="menuIcon"></i>
           </button>
           <img src="reconciliation-logo.jpg" alt="Logo" class="w-7 h-7 md:w-8 md:h-8">
           <span class="text-xl font-bold md:text-lg company-name">FinCorp Software Solutions</span>
         </div>
-
+        
         <div class="flex items-center space-x-4">
           <div class="relative">
             <button id="userMenuButton" class="flex items-center focus:outline-none transition-transform duration-200 hover:scale-110 active:scale-95">
@@ -144,7 +144,7 @@
       <!-- Sidebar -->
       <aside id="sidebar" class="sidebar bg-white shadow-md w-64 flex-shrink-0 flex flex-col">
         <div class="p-4 border-b border-gray-200"></div>
-
+        
         <div class="flex-1 overflow-y-auto">
           <div class="px-4 py-2">
             <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Dashboard Menu</div>
@@ -153,7 +153,7 @@
               <span class="nav-text">Dashboard</span>
             </a>
           </div>
-
+          
           <div class="px-4 py-2">
             <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Onboarding</div>
             <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
@@ -177,7 +177,7 @@
               <span class="nav-text">Monitor</span>
             </a>
           </div>
-
+          
           <div class="px-4 py-2">
             <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
                  onclick="toggleDropdown('inboxDropdown','inboxArrow')">
@@ -199,7 +199,7 @@
               </a>
             </div>
           </div>
-
+          
           <div class="px-4 py-2">
             <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
                  onclick="toggleDropdown('monitoringDropdown','monitoringArrow')">
@@ -214,7 +214,7 @@
           </div>
         </div>
       </aside>
-
+      
       <!-- Main Content -->
       <main id="content" class="flex-1 overflow-auto bg-gray-50 p-6 transition-all duration-300">
         <div class="bg-white rounded-lg shadow p-6 mb-6">
@@ -231,8 +231,8 @@
             </div>
             <div class="flex items-center space-x-2 md:space-x-4">
               <button class="px-3 py-1 bg-green-600 hover:bg-green-700 text-white rounded-md text-sm font-medium shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg md:bg-transparent md:text-green-600 md:hover:text-green-800 md:shadow-none md:hover:scale-110 md:px-0 md:py-0" title="Export to Excel">
-                <span class="hidden md:inline"><i class="fas fa-file-excel"></i></span>
-                <i class="fas fa-file-excel md:hidden"></i>
+                <span class="hidden md:inline"><i class="fas fa-file-excel text-xl"></i></span>
+                <i class="fas fa-file-excel text-lg md:hidden"></i>
               </button>
               <div class="relative">
                 <input type="text" placeholder="Search" class="md:w-full w-28 pl-7 pr-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
@@ -240,7 +240,7 @@
               </div>
             </div>
           </div>
-
+          
           <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200">
               <thead class="bg-gray-50">
@@ -288,41 +288,55 @@
   <script>
     const userMenuButton = document.getElementById('userMenuButton');
     const userMenu = document.getElementById('userMenu');
-
+    
     userMenuButton.addEventListener('click', (e) => {
       e.stopPropagation();
       userMenu.classList.toggle('hidden');
     });
-
+    
     document.addEventListener('click', (e) => {
       if (!userMenu.contains(e.target) && e.target !== userMenuButton) {
         userMenu.classList.add('hidden');
       }
     });
-
+    
     const sidebarToggle = document.getElementById('sidebarToggle');
     const sidebar = document.getElementById('sidebar');
-
+    const menuIcon = document.getElementById('menuIcon');
+    
     sidebarToggle.addEventListener('click', () => {
+      const isOpen = sidebarToggle.getAttribute('data-open') === 'true';
       sidebar.classList.toggle('active');
+      sidebarToggle.setAttribute('data-open', !isOpen);
+      
+      if (isOpen) {
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
+      } else {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
+      }
     });
-
+    
     function toggleDropdown(dropdownId, arrowId) {
       const dropdown = document.getElementById(dropdownId);
       const arrow = document.getElementById(arrowId);
       dropdown.classList.toggle('hidden');
       arrow.classList.toggle('rotate-180');
     }
-
+    
     function handleResize() {
       if (window.innerWidth >= 768) {
         sidebar.classList.remove('active');
+        sidebarToggle.setAttribute('data-open', 'false');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
       }
     }
-
+    
     window.addEventListener('resize', handleResize);
     handleResize();
-
+    
     window.addEventListener('load', function() {
       setTimeout(function() {
         document.getElementById('loader').style.display = 'none';
