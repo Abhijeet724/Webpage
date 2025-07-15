@@ -11,6 +11,13 @@
 
     body {
       font-family: 'Inter', sans-serif;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .sidebar {
@@ -53,13 +60,16 @@
     }
   </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 relative">
+  <div id="loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
   <div class="flex flex-col h-screen">
     <!-- Header -->
     <header class="bg-blue-100 text-gray-800 shadow-md">
       <div class="flex items-center justify-between px-4 py-3">
         <div class="flex items-center gap-2">
-          <button id="sidebarToggle" class="md:hidden text-white focus:outline-none mr-2">
+          <button id="sidebarToggle" class="md:hidden text-white focus:outline-none mr-2 transition-transform duration-200 hover:scale-110 active:scale-95">
             <i class="fas fa-bars text-xl"></i>
           </button>
           <img src="reconciliation-logo.jpg" alt="Logo" class="w-8 h-8">
@@ -68,7 +78,7 @@
 
         <div class="flex items-center space-x-4">
           <div class="relative">
-            <button id="userMenuButton" class="flex items-center focus:outline-none">
+            <button id="userMenuButton" class="flex items-center focus:outline-none transition-transform duration-200 hover:scale-110 active:scale-95">
               <i class="fas fa-user-circle text-2xl text-blue-600"></i>
             </button>
             <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
@@ -78,7 +88,7 @@
               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</a>
             </div>
           </div>
-          <button class="flex items-center px-3 py-1 bg-red-600 hover:bg-red-700 rounded-md text-white text-sm transition-colors">
+          <button class="flex items-center px-3 py-1 bg-red-600 hover:bg-red-700 rounded-md text-white text-sm transition-all duration-200 hover:scale-105 active:scale-95 shadow-md hover:shadow-lg">
             <i class="fas fa-sign-out-alt mr-2"></i>
             Logout
           </button>
@@ -166,12 +176,18 @@
         <div class="bg-white rounded-lg shadow p-6 mb-6">
           <div class="flex justify-between items-center mb-4">
             <div class="flex space-x-2">
-              <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md text-sm font-medium transition-colors">➕ Add Source</button>
-              <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md text-sm font-medium transition-colors">🗑 Bulk Delete</button>
+              <button class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-semibold shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
+                <span class="hidden md:inline">➕ Add Source</span>
+                <i class="fas fa-plus-circle md:hidden"></i>
+              </button>
+              <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md text-sm font-medium shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
+                <span class="hidden md:inline">🗑 Bulk Delete</span>
+                <i class="fas fa-trash-alt md:hidden"></i>
+              </button>
             </div>
             <div class="flex items-center space-x-2">
-              <button class="p-2 bg-green-500 hover:bg-green-600 text-white rounded-md transition-colors" title="Export to Excel">
-                <i class="fas fa-file-excel"></i>
+              <button class="text-green-600 hover:text-green-800 transition-all duration-200 hover:scale-110 active:scale-95 px-2 md:px-0" title="Export to Excel">
+                <i class="fas fa-file-excel text-xl"></i>
               </button>
               <input type="text" placeholder="Search" class="px-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
@@ -199,7 +215,7 @@
                       <div class="w-11 h-6 bg-gray-200 rounded-full peer-checked:bg-blue-600 peer-focus:ring-4 peer-focus:ring-blue-300 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full peer-checked:after:border-white"></div>
                     </label>
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-900"><a href="#">Edit</a></td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600 hover:text-blue-900 transition-all duration-200"><a href="#" class="inline-block hover:scale-110 active:scale-95">Edit</a></td>
                 </tr>
                 <tr>
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">John Doe</td>
@@ -258,6 +274,12 @@
 
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+      }, 500); // Match this with animation duration
+    });
   </script>
 </body>
 </html>
