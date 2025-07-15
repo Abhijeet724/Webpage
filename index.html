@@ -56,7 +56,7 @@
 <body class="bg-gray-50">
   <div class="flex flex-col h-screen">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-md">
+    <header class="bg-blue-100 text-gray-800 shadow-md">
       <div class="flex items-center justify-between px-4 py-3">
         <div class="flex items-center gap-2">
           <button id="sidebarToggle" class="md:hidden text-white focus:outline-none mr-2">
@@ -69,7 +69,7 @@
         <div class="flex items-center space-x-4">
           <div class="relative">
             <button id="userMenuButton" class="flex items-center focus:outline-none">
-              <i class="fas fa-user-circle text-2xl text-white"></i>
+              <i class="fas fa-user-circle text-2xl text-blue-600"></i>
             </button>
             <div id="userMenu" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
               <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profile</a>
@@ -87,80 +87,79 @@
     </header>
 
     <div class="flex flex-1 overflow-hidden">
-  <!-- Sidebar -->
-<aside id="sidebar" class="sidebar bg-white shadow-md w-64 flex-shrink-0 flex flex-col">
-  <div class="p-4 border-b border-gray-200"></div>
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar bg-white shadow-md w-64 flex-shrink-0 flex flex-col">
+        <div class="p-4 border-b border-gray-200"></div>
 
-  <div class="flex-1 overflow-y-auto">
-    <div class="px-4 py-2">
-      <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Dashboard Menu</div>
-      <a href="#" class="navlink flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-tachometer-alt mr-3 text-blue-500"></i>
-        <span class="nav-text">Dashboard</span>
-      </a>
-    </div>
+        <div class="flex-1 overflow-y-auto">
+          <div class="px-4 py-2">
+            <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Dashboard Menu</div>
+            <a href="#" class="navlink flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-tachometer-alt mr-3 text-blue-500"></i>
+              <span class="nav-text">Dashboard</span>
+            </a>
+          </div>
 
-    <div class="px-4 py-2">
-      <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Onboarding</div>
-      <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-building mr-3 text-blue-500"></i>
-        <span class="nav-text">Tenant</span>
-      </a>
-      <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-database mr-3 text-blue-500"></i>
-        <span class="nav-text">Source</span>
-      </a>
-      <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-rss mr-3 text-blue-500"></i>
-        <span class="nav-text">Feed</span>
-      </a>
-      <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-exchange-alt mr-3 text-blue-500"></i>
-        <span class="nav-text">Recon</span>
-      </a>
-      <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
-        <i class="fas fa-desktop mr-3 text-blue-500"></i>
-        <span class="nav-text">Monitor</span>
-      </a>
-    </div>
+          <div class="px-4 py-2">
+            <div class="section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2">Onboarding</div>
+            <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-building mr-3 text-blue-500"></i>
+              <span class="nav-text">Tenant</span>
+            </a>
+            <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-database mr-3 text-blue-500"></i>
+              <span class="nav-text">Source</span>
+            </a>
+            <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-rss mr-3 text-blue-500"></i>
+              <span class="nav-text">Feed</span>
+            </a>
+            <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-exchange-alt mr-3 text-blue-500"></i>
+              <span class="nav-text">Recon</span>
+            </a>
+            <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors mb-1">
+              <i class="fas fa-desktop mr-3 text-blue-500"></i>
+              <span class="nav-text">Monitor</span>
+            </a>
+          </div>
 
-    <div class="px-4 py-2">
-      <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
-           onclick="toggleDropdown('inboxDropdown','inboxArrow')">
-        <span>Inbox</span>
-        <i id="inboxArrow" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
-      </div>
-      <div id="inboxDropdown" class="hidden pl-4">
-        <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
-          <i class="fas fa-building mr-3 text-blue-500"></i><span>Tenant</span>
-        </a>
-        <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
-          <i class="fas fa-database mr-3 text-blue-500"></i><span>Source</span>
-        </a>
-        <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
-          <i class="fas fa-rss mr-3 text-blue-500"></i><span>Feed</span>
-        </a>
-        <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
-          <i class="fas fa-exchange-alt mr-3 text-blue-500"></i><span>Recon</span>
-        </a>
-      </div>
-    </div>
+          <div class="px-4 py-2">
+            <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
+                 onclick="toggleDropdown('inboxDropdown','inboxArrow')">
+              <span>Inbox</span>
+              <i id="inboxArrow" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+            </div>
+            <div id="inboxDropdown" class="hidden pl-4">
+              <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
+                <i class="fas fa-building mr-3 text-blue-500"></i><span>Tenant</span>
+              </a>
+              <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
+                <i class="fas fa-database mr-3 text-blue-500"></i><span>Source</span>
+              </a>
+              <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
+                <i class="fas fa-rss mr-3 text-blue-500"></i><span>Feed</span>
+              </a>
+              <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
+                <i class="fas fa-exchange-alt mr-3 text-blue-500"></i><span>Recon</span>
+              </a>
+            </div>
+          </div>
 
-    <div class="px-4 py-2">
-      <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
-           onclick="toggleDropdown('monitoringDropdown','monitoringArrow')">
-        <span>Monitoring</span>
-        <i id="monitoringArrow" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
-      </div>
-      <div id="monitoringDropdown" class="hidden pl-4">
-        <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
-          <i class="fas fa-desktop mr-3 text-blue-500"></i><span>Monitor Recon</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</aside>
-
+          <div class="px-4 py-2">
+            <div class="flex items-center justify-between section bg-blue-100 text-blue-800 px-3 py-2 rounded-md text-xs font-semibold uppercase tracking-wider mb-2 cursor-pointer"
+                 onclick="toggleDropdown('monitoringDropdown','monitoringArrow')">
+              <span>Monitoring</span>
+              <i id="monitoringArrow" class="fas fa-chevron-down text-xs transition-transform duration-200"></i>
+            </div>
+            <div id="monitoringDropdown" class="hidden pl-4">
+              <a href="#" class="submenu flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-700 hover:bg-blue-50 hover:text-blue-600 mb-1">
+                <i class="fas fa-desktop mr-3 text-blue-500"></i><span>Monitor Recon</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
 
       <!-- Main Content -->
       <main id="content" class="flex-1 overflow-auto bg-gray-50 p-6 transition-all duration-300">
@@ -245,11 +244,11 @@
     });
 
     function toggleDropdown(dropdownId, arrowId) {
-    const dropdown = document.getElementById(dropdownId);
-    const arrow = document.getElementById(arrowId);
-    dropdown.classList.toggle('hidden');
-    arrow.classList.toggle('rotate-180');
-  }
+      const dropdown = document.getElementById(dropdownId);
+      const arrow = document.getElementById(arrowId);
+      dropdown.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+    }
 
     function handleResize() {
       if (window.innerWidth >= 768) {
