@@ -44,6 +44,13 @@
     }
 
     @media (max-width: 768px) {
+      html {
+        font-size: 90%;
+      }
+      .text-xl {
+        font-size: 1rem;
+      }
+      
       .sidebar {
         position: fixed;
         z-index: 100;
@@ -57,6 +64,40 @@
       .content {
         margin-left: 0 !important;
       }
+      
+      .text-xl {
+        font-size: 1.125rem;
+      }
+      
+      .text-sm {
+        font-size: 0.7875rem;
+      }
+      
+      .text-xs {
+        font-size: 0.675rem;
+      }
+      
+      .p-6 {
+        padding: 1.35rem;
+      }
+      
+      .px-4 {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+      }
+      
+      .py-3 {
+        padding-top: 0.675rem;
+        padding-bottom: 0.675rem;
+      }
+      
+      .gap-2 {
+        gap: 0.45rem;
+      }
+      
+      .space-x-2 {
+        margin-left: 0.45rem;
+      }
     }
   </style>
 </head>
@@ -69,10 +110,10 @@
     <header class="bg-blue-100 text-gray-800 shadow-md">
       <div class="flex items-center justify-between px-4 py-3">
         <div class="flex items-center gap-2">
-          <button id="sidebarToggle" class="md:hidden text-white focus:outline-none mr-2 transition-transform duration-200 hover:scale-110 active:scale-95">
+          <button id="sidebarToggle" class="md:hidden text-black focus:outline-none mr-2 transition-transform duration-200 hover:scale-110 active:scale-95">
             <i class="fas fa-bars text-xl"></i>
           </button>
-          <img src="reconciliation-logo.jpg" alt="Logo" class="w-8 h-8">
+          <img src="reconciliation-logo.jpg" alt="Logo" class="w-7 h-7 md:w-8 md:h-8">
           <span class="text-xl font-bold">FinCorp Software Solutions</span>
         </div>
 
@@ -176,11 +217,11 @@
         <div class="bg-white rounded-lg shadow p-6 mb-6">
           <div class="flex justify-between items-center mb-4">
             <div class="flex space-x-2">
-              <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
+              <button class="px-3 py-1.5 md:px-4 md:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
                 <span class="hidden md:inline"><i class="fas fa-plus mr-1 text-white"></i> Add Source</span>
                 <i class="fas fa-plus-circle md:hidden text-white"></i>
               </button>
-              <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md text-sm font-medium shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
+              <button class="px-3 py-1.5 md:px-4 md:py-2 bg-red-500 hover:bg-red-600 text-white rounded-md text-sm font-medium shadow-md transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-lg">
                 <span class="hidden md:inline">🗑 Bulk Delete</span>
                 <i class="fas fa-trash-alt md:hidden"></i>
               </button>
@@ -191,7 +232,7 @@
                 <i class="fas fa-file-excel md:hidden"></i>
               </button>
               <div class="relative">
-                <input type="text" placeholder="Search" class="md:w-full w-32 pl-8 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
+                <input type="text" placeholder="Search" class="md:w-full w-28 pl-7 pr-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-400 text-sm"></i>
               </div>
             </div>
